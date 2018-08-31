@@ -15,16 +15,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="11172.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="Out.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="11172Test.txt">
+    <Text Include="Test.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="11727.cpp">
       <Filter>Source Files</Filter>
-    </Text>
+    </ClCompile>
   </ItemGroup>
 </Project>

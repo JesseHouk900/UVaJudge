@@ -18,7 +18,6 @@
     <Text Include="Out.txt">
       <Filter>Source Files</Filter>
     </Text>
-    <Text Include="Test.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="11727.cpp">

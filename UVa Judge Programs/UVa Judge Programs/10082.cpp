@@ -2,11 +2,16 @@
 
  Jesse Houk:   WERTYU:   10082:   euclid5
 
-Data structure required:
+Data structure required: Array of chars
 
-Tricks of the trade: Evaluate data as it comes in
+Tricks of the trade: Make a table of ascii values and use it as an encoding
+	tool where we read in the correct value into the encoded character's
+	position.
 
-Purpose: 
+Purpose: Given an undetermined number of encrypted lines, print out the correct
+	message. The encryption is done such that a given character is the
+	character to the left of the intended character on the keyboard, excluding
+	Q, A, Z (and q, a, z).
 
 /////////////////////////////////////////////////////////////////////////////*/
 

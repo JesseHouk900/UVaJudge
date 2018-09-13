@@ -1,17 +1,24 @@
-ABC
-ABC
-XWVUTSRQPONMLKJIHGFEDCBA
-LKJIHGFEDCBAXWVUTSRQPONM
-HGFEDCBAPONMLKJIXWVUTSRQ
-FEDCBALKJIHGRQPONMXWVUTS
-DCBAHGFELKJIPONMTSRQXWVU
-CBAFEDIHGLKJONMRQPUTSXWV
-pstupnilacitircemosemeviguoynacriSyhWAWtuBenifskroWedocymsiereHesael
-iScrnaoyguvimesemoceiritacilpntupselsaHereiemscydoWeroskifenuBWtWAyh
-hesreveRpuorG29111SBaaBnmocenoediptt
-eRpuorG29111ediptthesrevSBaaBnmoceno
-uorG29111hesreveRpenoedipttSBaaBnmoc
-G29111eRpuorhesrevedipttmocenoSBaaBn
-9111orG2eRpusrevttheedipcenoBnmoSBaa
-111G29uoreRprevhespttedienomocaBnSBa
-1191G2orpueRevsrhettipednocemoBnaaSB
+A B C D 
+A B C D 
+A B C D 
+A B C D 
+C D 
+C D 
+A B C D 
+E F G H 
+I J K L 
+M N O P 
+E F 
+I J 
+A B C D 
+A B C D 
+A B C D 
+A B C D 
+D C 
+D C 
+A B C D 
+A B C D 
+A B C D 
+A B C D 
+C C 
+D D 

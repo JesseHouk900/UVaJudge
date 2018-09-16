@@ -24,7 +24,7 @@ int main() {
 		for (int i = 0; i < jumperNum; i++) {
 			cin >> jumpers[i];
 			if (i >= 1) {
-				differences[i - 1] = abs(jumpers[i] - jumpers[i - 1];
+				differences[i - 1] = abs(jumpers[i] - jumpers[i - 1]);
 			}
 		}
 		delete [] jumpers;

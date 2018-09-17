@@ -105,24 +105,34 @@ int main() {
 }
 
 void PerformOp(vector<vector<int> > & s, const int & ring, const int op) {
+	//cout << ring << '\n';
 	switch (op) {
-		case 1:
+		case 1: {
 			UpsideDownFlip(s, ring);
-		case 2:
+			break;
+		}
+		case 2: {
 			LeftRightFlip(s, ring);
-		case 3:
+			break;
+		}
+		case 3: {
 			MainDiagonalFlip(s, ring);
-		case 4:
+			break;
+		}
+		case 4: {
 			MainInverseDiagonalFlip(s, ring);
-		break;
+			break;
+			
+		}
 	}
 }
 
 void UpsideDownFlip(vector<vector<int> > & s, const int ring) {
-	for (int r = 0; r < (s.size() - ring) / 2; r++) {
-		for (int c = 0; c < s.size() - ring; c++) {
+	for (int r = ring; r < (s.size() - ring + 1) / 2; r++) {
+		for (int c = ring; c < s.size() - ring; c++) {
 			if (r % (s.size() - ring - 1)) {
-				if (c % (s.size() - ring - 1) == 0) {
+			//cout << "swap (" << r << ", " << c << ") with (" << s.size() - r - 1 << ", " << c << ")\n";
+				if (c % (s.size() - ring - 1) == ring) {
 					UpDownSwap(s, r, c);
 				}
 			}
@@ -134,8 +144,8 @@ void UpsideDownFlip(vector<vector<int> > & s, const int ring) {
 }
 
 void LeftRightFlip(vector<vector<int> > & s, const int ring) {
-	for (int r = 0; r < s.size() - ring; r++) {
-		for (int c = 0; c < (s.size() - ring) / 2; c++) {
+	for (int r = ring; r < s.size() - ring; r++) {
+		for (int c = ring; c < (s.size() - ring) / 2; c++) {
 			if (r % (s.size() - ring - 1)) {
 				if (c % (s.size() - ring - 1) == 0) {
 					LeftRightSwap(s, r, c);
@@ -149,8 +159,8 @@ void LeftRightFlip(vector<vector<int> > & s, const int ring) {
 }
 
 void MainDiagonalFlip(vector<vector<int> > & s, const int ring) {
-	for (int r = 1; r < s.size() - ring; r++) {
-		for (int c = 0; c < s.size() - ring; c++) {
+	for (int r = ring + 1; r < s.size() - ring; r++) {
+		for (int c = ring; c < r; c++) {
 			if (r % (s.size() - ring - 1)) {
 				if (c % (s.size() - ring - 1) == 0) {
 					MainDiagonalSwap(s, r, c);
@@ -164,8 +174,8 @@ void MainDiagonalFlip(vector<vector<int> > & s, const int ring) {
 }
 
 void MainInverseDiagonalFlip(vector<vector<int> > & s, const int ring) {
-	for (int r = 0; r < s.size() - ring; r++) {
-		for (int c = 0; c < s.size() - ring; c++) {
+	for (int r = ring; r < s.size() - ring; r++) {
+		for (int c = ring; c < s.size() - ring - r; c++) {
 			if (r % (s.size() - ring - 1)) {
 				if (c % (s.size() - ring - 1) == 0) {
 					MainInverseDiagonalSwap(s, r, c);
@@ -182,10 +192,13 @@ void UpDownSwap(vector<vector<int> > & s, const int & r, const int & c) {
 	const int temp = s[r][c];
 	s[r][c] = s[s.size() - r - 1][c];
 	s[s.size() - r - 1][c] = temp;
+	
+	//cout << "swap " << s[r][c] << " with " << s[s.size() - r - 1][c] << "\n";
 
 }
 
 void LeftRightSwap(vector<vector<int> > & s, const int & r, const int & c) {
+	//cout << "I\n";
 	const int temp = s[r][c];
 	s[r][c] = s[r][s.size() - c - 1];
 	s[r][s.size() - c - 1] = temp;
@@ -193,6 +206,7 @@ void LeftRightSwap(vector<vector<int> > & s, const int & r, const int & c) {
 }
 
 void MainDiagonalSwap(vector<vector<int> > & s, const int & r, const int & c) {
+	//cout << "am\n";
 	const int temp = s[r][c];
 	s[r][c] = s[c][r];
 	s[c][r] = temp;
@@ -200,6 +214,7 @@ void MainDiagonalSwap(vector<vector<int> > & s, const int & r, const int & c) {
 }
 
 void MainInverseDiagonalSwap(vector<vector<int> > & s, const int & r, const int & c) {
+	//cout << "spaghiti\n";
 	const int temp = s[r][c];
 	s[r][c] = s[s.size() - c - 1][s.size() - r - 1];
 	s[s.size() - c - 1][s.size() - r - 1] = temp;

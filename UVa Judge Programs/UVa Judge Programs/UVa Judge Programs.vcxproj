@@ -155,7 +155,10 @@
     <Text Include="Test.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="10082.cpp" />
+    <ClCompile Include="10016.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\10016.pdf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -57,8 +57,8 @@ int main() {
 		}
 
 		for (int ro = 0; ro < maxOps; ro++) {
-			for (int r = 0; r < ringOperations.size(); r++) {
-				if (ro < ringOperations[r].size()) {
+			for (unsigned int r = 0; r < ringOperations.size(); r++) {
+				if (static_cast<unsigned int>(ro) < ringOperations[r].size()) {
 					PerformOp(squarelotron, r, ringOperations[r][ro]);
 				}
 			}
@@ -107,73 +107,122 @@ int main() {
 void PerformOp(vector<vector<int> > & s, const int & ring, const int op) {
 	switch (op) {
 		case 1:
+		{
 			UpsideDownFlip(s, ring);
+			break;
+		}
 		case 2:
+		{
 			LeftRightFlip(s, ring);
+			break;
+		}
 		case 3:
+		{
 			MainDiagonalFlip(s, ring);
+			break;
+		}
 		case 4:
+		{
 			MainInverseDiagonalFlip(s, ring);
-		break;
+			break;
+		}
 	}
 }
 
 void UpsideDownFlip(vector<vector<int> > & s, const int ring) {
-	for (int r = 0; r < (s.size() - ring) / 2; r++) {
-		for (int c = 0; c < s.size() - ring; c++) {
-			if (r % (s.size() - ring - 1)) {
-				if (c % (s.size() - ring - 1) == 0) {
-					UpDownSwap(s, r, c);
-				}
-			}
-			else {
-				UpDownSwap(s, r, c);
-			}
+	// if the ring is not the center ring on an odd size
+	if (ring != s.size() - ring - 1) {
+		// swap the upper left corner
+		UpDownSwap(s, ring, ring);
+		// swap the upper right corner
+		UpDownSwap(s, ring, s.size() - ring - 1);
+		// loop through half of the length of the ring
+		for (int pos = ring + 1; pos < s.size() / 2; pos++) {
+			// swap the elements on the left side
+			UpDownSwap(s, pos, ring);
+			// swap the elements on the left side of the top and bottom
+			UpDownSwap(s, ring, pos);
+			// swap the elements on the right side
+			UpDownSwap(s, pos, s.size() - ring - 1);
+			// swap the elements on the right side of the top and bottom
+			UpDownSwap(s, ring, s.size() - pos - 1);
+		}
+		// if s has an odd size, swap the middle element on the top and bottom
+		if (s.size() % 2) {
+			UpDownSwap(s, ring, s.size() / 2);
 		}
 	}
 }
 
 void LeftRightFlip(vector<vector<int> > & s, const int ring) {
-	for (int r = 0; r < s.size() - ring; r++) {
-		for (int c = 0; c < (s.size() - ring) / 2; c++) {
-			if (r % (s.size() - ring - 1)) {
-				if (c % (s.size() - ring - 1) == 0) {
-					LeftRightSwap(s, r, c);
-				}
-			}
-			else {
-				LeftRightSwap(s, r, c);
-			}
+	// if the ring is not the center ring on an odd size
+	if (ring != s.size() - ring - 1) {
+		// swap the upper left corner
+		LeftRightSwap(s, ring, ring);
+		// swap the Lower left corner
+		LeftRightSwap(s, s.size() - ring - 1, ring);
+		// loop through half of the length of the ring
+		for (int pos = ring + 1; pos < s.size() / 2; pos++) {
+			// swap the elements on the upper side of the left and right side
+			LeftRightSwap(s, pos, ring);
+			// swap the elements on the top
+			LeftRightSwap(s, ring, pos);
+			// swap the elements on the bottom
+			LeftRightSwap(s, s.size() - ring - 1, pos);
+			// swap the elements on the right side of the top and bottom
+			LeftRightSwap(s, s.size() - pos - 1, ring);
+		}
+		// if s has an odd size, swap the middle element on the top and bottom
+		if (s.size() % 2) {
+			LeftRightSwap(s, s.size() / 2, ring);
 		}
 	}
 }
 
 void MainDiagonalFlip(vector<vector<int> > & s, const int ring) {
-	for (int r = 1; r < s.size() - ring; r++) {
-		for (int c = 0; c < s.size() - ring; c++) {
-			if (r % (s.size() - ring - 1)) {
-				if (c % (s.size() - ring - 1) == 0) {
-					MainDiagonalSwap(s, r, c);
-				}
-			}
-			else {
-				MainDiagonalSwap(s, r, c);
-			}
+	// if the ring is not the center ring on an odd size
+	if (ring != s.size() - ring - 1) {
+		// swap the corner
+		MainDiagonalSwap(s, s.size() - ring - 1, ring);
+		// loop through half of the length of the ring
+		for (int pos = ring + 1; pos < s.size() / 2; pos++) {
+			// swap the elements on the top of the left side
+			MainDiagonalSwap(s, pos, ring);
+			// swap the elements on the bottom of the left side
+			MainDiagonalSwap(s, s.size() - pos - 1, ring);
+			// swap the elements on the left of the bottom side
+			MainDiagonalSwap(s, s.size() - ring - 1, pos);
+			// swap the elements on the right of the bottom side
+			MainDiagonalSwap(s, s.size() - ring - 1, s.size() - pos - 1);
+		}
+		// if s has an odd size, swap the middle element on the bottom and left
+		if (s.size() % 2) {
+			MainDiagonalSwap(s, s.size() - ring - 1, s.size() / 2);
+			MainDiagonalSwap(s, s.size() / 2, ring);
 		}
 	}
 }
 
 void MainInverseDiagonalFlip(vector<vector<int> > & s, const int ring) {
-	for (int r = 0; r < s.size() - ring; r++) {
-		for (int c = 0; c < s.size() - ring; c++) {
-			if (r % (s.size() - ring - 1)) {
-				if (c % (s.size() - ring - 1) == 0) {
-					MainInverseDiagonalSwap(s, r, c);
-				}
-			}
-			else {
-				MainInverseDiagonalSwap(s, r, c);
-			}
+	// if the ring is not the center ring on an odd size
+	if (ring != s.size() - ring - 1) {
+		// swap the corner
+		MainInverseDiagonalSwap(s, s.size() - ring - 1, s.size() - ring - 1);
+		// loop through half of the length of the ring
+		for (int pos = ring + 1; pos < s.size() / 2; pos++) {
+			// swap the elements on the top of the left side
+			MainInverseDiagonalSwap(s, pos, ring);
+			// swap the elements on the bottom of the left side
+			MainInverseDiagonalSwap(s, s.size() - pos - 1, ring);
+			// swap the elements on the left of the top side
+			MainInverseDiagonalSwap(s, ring, pos);
+			// swap the elements on the right of the top side
+			MainInverseDiagonalSwap(s, ring, s.size() - pos - 1);
+		}
+		// if s has an odd size, swap the middle element on the bottom and left
+		if (s.size() % 2) {
+			MainInverseDiagonalSwap(s, ring, s.size() / 2);
+			MainInverseDiagonalSwap(s, s.size() / 2, ring);
 		}
 	}
 }

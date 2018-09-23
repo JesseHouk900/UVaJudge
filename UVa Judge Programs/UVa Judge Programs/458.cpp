@@ -1,11 +1,12 @@
 /*-----------------------------------------------------------------------------
 Jesse Houk:    The Decoder:    458:    euclid5
 
-Data structure required : 
+Data structure required : N/A
 
-Tricks of the trade : 
+Tricks of the trade : Cast characters after modifying them by their ascii code
 
-Problem definition : 
+Problem definition : Read in an unknown number of lines that are encoded and
+	print their decoded message
 
 Runtime: 0.040
 -----------------------------------------------------------------------------*/

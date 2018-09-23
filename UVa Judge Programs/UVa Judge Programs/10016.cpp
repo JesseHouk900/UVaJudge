@@ -1,11 +1,13 @@
 /*/////////////////////////////////////////////////////////////////////
 Jesse Houk :    Flip - Flop the Squarelotron :    10016 :    euclid5
 
-Data structure :
+Data structure : vector of vectors of ints
 
-Tricks of the trade :
+Tricks of the trade : indexing properly, 4 operations done with one
+	index to minimize looping
 
-Problem :
+Problem : given a square matrix, perform different flips to modify rings
+	of the matrix
 
 ////////////////////////////////////////////////////////////////////*/
 #include<iostream>
@@ -48,12 +50,6 @@ int main() {
 			for (int ro = 0; ro < numRingOps; ro++) {
 				cin >> ringOperations[r][ro];
 			}
-			/*for (int ro = 0; ro < numRingOps; ro++) {
-				cout << ringOperations[r][ro] << ' ';
-				if (ro == numRingOps - 1) {
-					cout << '\n';
-				}
-			}*/
 		}
 
 		for (int ro = 0; ro < maxOps; ro++) {
@@ -64,23 +60,6 @@ int main() {
 			}
 		}
 
-		/*for (int r = 0; r < ringOperations.size(); r++) {
-			for (int ro = 0; ro < ringOperations[r].size(); ro++) {
-				if (ringOperations[r][ro] == 1) {
-					UpsideDownFlip(squarelotron, r, c);
-				}
-				else if (ringOperations[r][ro] == 2) {
-					LeftRightFlip(squarelotron);
-				}
-				else if (ringOperations[r][ro] == 3) {
-					MainDiagonalFlip(squarelotron);
-				}
-				else if (ringOperations[r][ro] == 4) {
-					MainInverseDiagonalFlip(squarelotron);
-				}
-			}
-		}*/
-
 		for (int r = 0; r < size; r++) {
 			for (int c = 0; c < size; c++) {
 				cout << squarelotron[r][c];
@@ -90,39 +69,30 @@ int main() {
 				else cout << '\n';
 			}
 		}
-
-		//for (int j = 0; j < ringOperations.size(); j++) {
-		//	//cout << ringOperations[j].size() << '\n';
-		//	for (int i = 0; i < ringOperations[j].size(); i++) {
-		//		cout << ringOperations[j][i];
-		//		if (i != ringOperations[j].size() - 1) {
-		//			cout << ' ';
-		//		}
-		//		else cout << '\n';
-		//	}
-		//}
 	}
 }
 
 void PerformOp(vector<vector<int> > & s, const int & ring, const int op) {
-	//cout << ring << '\n';
 	switch (op) {
-		case 1: {
+		case 1:
+		{
 			UpsideDownFlip(s, ring);
 			break;
 		}
-		case 2: {
+		case 2:
+		{
 			LeftRightFlip(s, ring);
 			break;
 		}
-		case 3: {
+		case 3:
+		{
 			MainDiagonalFlip(s, ring);
 			break;
 		}
-		case 4: {
+		case 4:
+		{
 			MainInverseDiagonalFlip(s, ring);
 			break;
-			
 		}
 	}
 }
@@ -229,13 +199,10 @@ void UpDownSwap(vector<vector<int> > & s, const int & r, const int & c) {
 	const int temp = s[r][c];
 	s[r][c] = s[s.size() - r - 1][c];
 	s[s.size() - r - 1][c] = temp;
-	
-	//cout << "swap " << s[r][c] << " with " << s[s.size() - r - 1][c] << "\n";
 
 }
 
 void LeftRightSwap(vector<vector<int> > & s, const int & r, const int & c) {
-	//cout << "I\n";
 	const int temp = s[r][c];
 	s[r][c] = s[r][s.size() - c - 1];
 	s[r][s.size() - c - 1] = temp;
@@ -243,7 +210,6 @@ void LeftRightSwap(vector<vector<int> > & s, const int & r, const int & c) {
 }
 
 void MainDiagonalSwap(vector<vector<int> > & s, const int & r, const int & c) {
-	//cout << "am\n";
 	const int temp = s[r][c];
 	s[r][c] = s[c][r];
 	s[c][r] = temp;
@@ -251,7 +217,6 @@ void MainDiagonalSwap(vector<vector<int> > & s, const int & r, const int & c) {
 }
 
 void MainInverseDiagonalSwap(vector<vector<int> > & s, const int & r, const int & c) {
-	//cout << "spaghiti\n";
 	const int temp = s[r][c];
 	s[r][c] = s[s.size() - c - 1][s.size() - r - 1];
 	s[s.size() - c - 1][s.size() - r - 1] = temp;

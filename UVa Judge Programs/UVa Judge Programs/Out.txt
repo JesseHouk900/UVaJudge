@@ -1,7 +1,1 @@
-Yes
-No
-Yes
-Yes
-
-Yes
-
+10000

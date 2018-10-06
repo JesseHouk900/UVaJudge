@@ -11,6 +11,7 @@ Tricks of the Trade: Used parallel vectors to monitor when an occurence of the
 Problem: Given a square matrix and a smaller square matrix, find the occurences
 of the smaller matrix within the larger one rotated 0, 90, 180, and 270 degrees.
 
+Runtime: .02
 /////////////////////////////////////////////////////////////////////////////*/
 
 #include <iostream>

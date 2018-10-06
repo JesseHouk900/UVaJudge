@@ -8,7 +8,7 @@ Tricks of the trade :
 Problem : Read in a line containing N. Then read in N lines of (, ), [,
 	] and determine if they have been paired appropriately.
 
-Runtime: NEED TO RUN
+Runtime: .05			Worse than before
 
 ////////////////////////////////////////////////////////////////////*/
 

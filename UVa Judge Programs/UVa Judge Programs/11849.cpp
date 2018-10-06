@@ -10,7 +10,7 @@
 *		The following N + M lines are Jack and Jills CDs, marked by a positive
 *		integer, e, and, individually, they use e at most once.
 *
-*NEEDS TO BE SUBMIT
+*	Runtime: 1.170			HORRIBLE!!
 /////////////////////////////////////////////////////////////////////////////*/
 
 #include <iostream>

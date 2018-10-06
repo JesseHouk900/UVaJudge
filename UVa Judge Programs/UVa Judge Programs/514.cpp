@@ -9,6 +9,7 @@ Problem : receiving train cars 1 through n determine if they can be
 	rearranged using a stack to leave in the order specified by the
 	following lines of numbers 1 through n in any order. A new set is
 	indicated by a 0 and the program is terminated on 2 consecutive 0s
+Runtime: .07			Booo
 ////////////////////////////////////////////////////////////////////*/
 
 #include <iostream>

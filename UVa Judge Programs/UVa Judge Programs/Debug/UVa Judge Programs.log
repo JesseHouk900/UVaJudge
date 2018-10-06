@@ -1,2 +1,24 @@
-﻿  11849.cpp
-  UVa Judge Programs.vcxproj -> C:\Users\jesse\Documents\CS\repos\UVaJudge\UVa Judge Programs\Debug\UVa Judge Programs.exe
+﻿  10815.cpp
+c:\users\jesse\documents\cs\repos\uvajudge\uva judge programs\uva judge programs\10815.cpp(11): error C3867: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::length': non-standard syntax; use '&' to create a pointer to member
+c:\users\jesse\documents\cs\repos\uvajudge\uva judge programs\uva judge programs\10815.cpp(11): error C2446: '<': no conversion from 'unsigned int (__thiscall std::basic_string<char,std::char_traits<char>,std::allocator<char>>::* )(void) noexcept const' to 'int'
+  c:\users\jesse\documents\cs\repos\uvajudge\uva judge programs\uva judge programs\10815.cpp(11): note: There is no context in which this conversion is possible
+c:\users\jesse\documents\cs\repos\uvajudge\uva judge programs\uva judge programs\10815.cpp(18): error C3867: 'std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::size': non-standard syntax; use '&' to create a pointer to member
+          with
+          [
+              _Kty=std::string,
+              _Pr=std::less<std::string>,
+              _Alloc=std::allocator<std::string>
+          ]
+c:\users\jesse\documents\cs\repos\uvajudge\uva judge programs\uva judge programs\10815.cpp(18): error C2446: '<': no conversion from 'unsigned int (__thiscall std::_Tree<std::_Tset_traits<_Kty,_Pr,_Alloc,false>>::* )(void) noexcept const' to 'int'
+          with
+          [
+              _Kty=std::string,
+              _Pr=std::less<std::string>,
+              _Alloc=std::allocator<std::string>
+          ]
+  c:\users\jesse\documents\cs\repos\uvajudge\uva judge programs\uva judge programs\10815.cpp(18): note: There is no context in which this conversion is possible
+c:\users\jesse\documents\cs\repos\uvajudge\uva judge programs\uva judge programs\10815.cpp(19): error C2676: binary '+': 'std::_Tree_const_iterator<std::_Tree_val<std::_Tree_simple_types<_Ty>>>' does not define this operator or a conversion to a type acceptable to the predefined operator
+          with
+          [
+              _Ty=std::basic_string<char,std::char_traits<char>,std::allocator<char>>
+          ]

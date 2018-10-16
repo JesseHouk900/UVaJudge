@@ -1,19 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="UVa Judge Programs/10082.cpp">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UVa Judge Programs/11572.cpp">
     <Files>
-      <File FileName="UVa Judge Programs/10082.cpp" Line="1" Column="1" />
+      <File FileName="UVa Judge Programs/11572.cpp" Line="41" Column="14" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="UVa Judge Programs" expanded="True">
-            <Node name="UVa Judge Programs" expanded="True">
-              <Node name="10082.cpp" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x64" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

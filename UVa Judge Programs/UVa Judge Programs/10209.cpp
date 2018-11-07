@@ -1,7 +1,7 @@
 /******************************************************************************
 	Jesse Houk: Is This Integration?   : 10209   : euclid5
 
-	Data Structures: 
+	Data Structures: array of doubles
 
 	Tricks of the Trade: trig, Dr. Cobb, math, math, math. Specifically, 
 		given a circle of radius a, a sector of the circle with angle B,
@@ -15,7 +15,7 @@
 	Problem: given the length of the side of a square, find the area of 3 distinct
 		regions that are formed when drawing 4 circles on the verticies of the square
 
-	Runtime: 0.000
+	Runtime: 0.020			Boo
 ******************************************************************************/
 #include <iostream>
 #include <math.h> // sqrt

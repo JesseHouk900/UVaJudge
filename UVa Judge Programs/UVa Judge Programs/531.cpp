@@ -28,23 +28,23 @@ int main() {
 			else {
 				// initialize a matrix to be pairs
 				vector<vector<p > > RSQMatrix = vector<vector<
-					p > >(list2.size(), vector<p
-					>(list1.size(), p(0, "")));
+					p > >(list2.size() + 1, vector<p
+					>(list1.size() + 1, p(0, "")));
 
-				for (int r = 1; r < list2.size(); r++) {
+				for (int r = 0; r < list2.size(); r++) {
 					// add brekpoint
-					for (int c = 1; c < list1.size(); c++) {
-						if (list2[r - 1] == list1[c - 1]) {
-							RSQMatrix[r][c] = p(RSQMatrix[r - 1]
-								[c - 1].first + 1, RSQMatrix[r - 1][c - 1].second);
-							if (RSQMatrix[r][c].first > 1) {
-								RSQMatrix[r][c].second += " ";
+					for (int c = 0; c < list1.size(); c++) {
+						if (list2[r] == list1[c]) {
+							RSQMatrix[r + 1][c + 1] = p(RSQMatrix[r]
+								[c].first + 1, RSQMatrix[r][c].second);
+							if (RSQMatrix[r + 1][c + 1].first > 1) {
+								RSQMatrix[r + 1][c + 1].second += " ";
 							}
-							RSQMatrix[r][c].second += list2[r - 1];
+							RSQMatrix[r + 1][c + 1].second += list2[r];
 
 						}
 						else {
-							RSQMatrix[r][c] = orderedMax(RSQMatrix[r][c - 1], RSQMatrix[r - 1][c]);
+							RSQMatrix[r + 1][c + 1] = orderedMax(RSQMatrix[r + 1][c], RSQMatrix[r][c + 1]);
 						}
 					}
 				}

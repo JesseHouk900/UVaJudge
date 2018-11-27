@@ -22,4 +22,15 @@
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="280.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="531_2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="836.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

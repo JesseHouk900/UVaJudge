@@ -1,1 +1,4 @@
-﻿  UVa Judge Programs.vcxproj -> C:\Users\Alex\Documents\Jesse\CS\UVaJudge\UVa Judge Programs\Debug\UVa Judge Programs.exe
+﻿  280.cpp
+c:\users\alex\documents\jesse\cs\uvajudge\uva judge programs\uva judge programs\280.cpp(62): warning C4018: '<': signed/unsigned mismatch
+c:\users\alex\documents\jesse\cs\uvajudge\uva judge programs\uva judge programs\280.cpp(263): warning C4018: '<': signed/unsigned mismatch
+  UVa Judge Programs.vcxproj -> C:\Users\Alex\Documents\Jesse\CS\UVaJudge\UVa Judge Programs\Debug\UVa Judge Programs.exe

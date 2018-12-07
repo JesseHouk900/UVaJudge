@@ -23,7 +23,10 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="280.cpp">
+    <ClCompile Include="10305.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="10986.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

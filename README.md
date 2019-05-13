@@ -6,6 +6,6 @@ Below are the problems that have been solved, those bolded are ones solved with 
 
 Below are the problems that have been submitted but did not get accepted for some reason, indicated by the color of the problem number:
 10954 11572
-- ![1092](https://placehold.it/15/c5f015/000000?text=+) `10954 11572`
+- ![1092](https://placehold.it/15/c5f015/000000?text=+) `Problems with Runtime exceeded error: 10954 11572`
 
 ## 100
